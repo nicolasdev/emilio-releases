@@ -14,7 +14,7 @@ All your Claude Code sessions in one window: every session in a list on the left
 - **Real consoles**: each session runs the `claude` CLI itself, not a re-implementation, so everything you know from the terminal works the same.
 - **Activity at a glance**: a dot marks the consoles open in Claudio, and turns into a spinning half circle while Claude is working. The window title and the taskbar (Windows) or Dock (macOS) icon show when Claude is working in at least one session.
 - **Rename** a session: the name is the one `/rename` sets, so `claude --resume` shows it too.
-- **Start a new session** in a recent folder or any other folder.
+- **Start a new session** in a recent folder or any other folder, or in a new git worktree so that parallel sessions do not touch the same files.
 - **Unload** a conversation to free the memory of its `claude` process.
 - Dark, light or system **theme**, adjustable **font sizes**, interface in **English, French and Spanish**.
 
@@ -43,6 +43,7 @@ The installers are not code-signed yet, so the first launch shows a warning:
 |---|---|
 | Resume a session | Click it in the list |
 | New session | **+** button or `Ctrl+N` (`⌘N` on Mac), then a recent folder or "Other folder…" |
+| New session in a git worktree | **▾** next to **+** → New worktree…, then the repository and an optional name: Claude Code creates a branch and a folder in `<repo>/.claude/worktrees` and starts the session there |
 | Rename | `F2`, double-click the title, or **⋯** → Rename |
 | Unload a conversation | **⋯** → Unload conversation: stops its `claude` process and frees its console |
 | Collapse a project | Click its name in the list |
@@ -66,6 +67,7 @@ Claudio finds your sessions in `~/.claude`, or in `$CLAUDE_CONFIG_DIR` when that
 - Claudio relies on parts of Claude Code that are internal and undocumented: the transcript format, the record written by `/rename`, and the terminal title Claude sets while it works. A Claude Code update can break the list, renaming or the activity indicator until Claudio is updated.
 - Do not open in Claudio a session that is already open in another terminal: two `claude` processes would write to the same session.
 - Closing Claudio stops the running sessions. It asks for confirmation only when Claude is working in at least one of them.
+- Unloading a conversation or closing Claudio asks Claude to quit, which takes a few seconds, so that it shuts down cleanly. A session in a git worktree is stopped at once instead: on quitting, Claude Code would delete an unchanged worktree, or wait for an answer about a changed one. Its worktree stays locked until the session is resumed; to remove it by hand, run `git worktree unlock <path>` first.
 - Linux is not supported yet.
 
 ## License
