@@ -30,6 +30,7 @@ Each letter stands for a feature:
 - **Obfuscate** the title of a sensitive conversation: three stand-in words in italics replace it in the list and the grid, and the real title shows while the pointer is over it.
 - **Unload** a conversation to free the memory of its `claude` process.
 - **Delete** a conversation, or a worktree with its conversations and, if you choose, its branch.
+- **Usage limits** under the list, read on demand from Claude Code's `/usage`: current session, week, and week per model.
 - Dark, light or system **theme**, adjustable **font sizes**, interface in **English, French and Spanish**.
 
 ![The same list in the light theme](images/rowan-light.png)
@@ -69,8 +70,10 @@ The installers are not code-signed yet, so the first launch shows a warning:
 | Collapse a project | Click its name in the list |
 | Resize the list | Drag the separator (the width is remembered) |
 | New line in the prompt | `Shift+Enter`, or `Ctrl+Enter` if chosen in Settings (⚙) |
-| Copy / paste | `Ctrl+C` on a selection / `Ctrl+V` (`⌘C` / `⌘V` on Mac) |
+| Copy / paste | `Ctrl+C` on a selection / `Ctrl+V` (`⌘C` / `⌘V` on Mac), or right-click: copies the selection, or pastes when nothing is selected |
+| Paste a file path | Drag the file onto a console |
 | Theme, text size, language | Settings (⚙) |
+| Usage limits | Settings (⚙) → "Show the usage limits", then **⟳** under the list; point at a value for its reset time |
 | Keyboard only | `Tab` to the list, arrows to move, `Enter` to open, `F2` to rename, `Shift+F10` or the Menu key for the session menu |
 
 "folder not found" means the session's original folder no longer exists on this machine. Claude Code only resumes a session from its original folder, so restore or recreate that folder at the same path.
@@ -79,12 +82,12 @@ Rowan finds your sessions in `~/.claude`, or in `$CLAUDE_CONFIG_DIR` when that v
 
 ## Privacy
 
-- Rowan runs on your machine and sends nothing over the network itself. The `claude` consoles it starts talk to Anthropic exactly as they do in a terminal.
+- Rowan runs on your machine and sends nothing over the network itself. The `claude` consoles it starts talk to Anthropic exactly as they do in a terminal, and so does the `claude` started for a few seconds when you refresh the usage limits.
 - It reads the session transcripts in your Claude configuration folders. It writes to them only to rename a session, by appending one line, and deletes them only when you delete a conversation or a worktree.
 
 ## Good to know
 
-- Rowan relies on parts of Claude Code that are internal and undocumented: the transcript format, the record written by `/rename`, and the terminal title Claude sets while it works. A Claude Code update can break the list, renaming or the activity indicator until Rowan is updated.
+- Rowan relies on parts of Claude Code that are internal and undocumented: the transcript format, the record written by `/rename`, the terminal title Claude sets while it works, and the `/usage` screen. A Claude Code update can break the list, renaming, the activity indicator or the usage limits until Rowan is updated.
 - Do not open in Rowan a session that is already open in another terminal: two `claude` processes would write to the same session.
 - Closing Rowan stops the running sessions. It asks for confirmation only when Claude is working in at least one of them.
 - Deleting a conversation or a worktree cannot be undone. Both ask for confirmation, with Cancel selected. A running console is stopped first; if Claude Code does not stop in time, nothing is deleted.
