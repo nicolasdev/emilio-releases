@@ -46,6 +46,7 @@ The installers are not code-signed yet, so the first launch shows a warning:
 | New session in a git worktree | **▾** next to **+** → New worktree…, then the repository and an optional name: Claude Code creates a branch and a folder in `<repo>/.claude/worktrees` and starts the session there |
 | Rename | `F2`, double-click the title, or **⋯** → Rename |
 | Unload a conversation | **⋯** → Unload conversation: stops its `claude` process and frees its console |
+| Several consoles side by side | **⋯** → Add to grid on each session (▦ in the list marks them); **▦** next to ⚙ switches between the grid and one console; click a tile to type in it |
 | Collapse a project | Click its name in the list |
 | Resize the list | Drag the separator (the width is remembered) |
 | New line in the prompt | `Shift+Enter` |
