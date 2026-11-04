@@ -72,7 +72,7 @@ The installers are not code-signed yet, so the first launch shows a warning:
 | Collapse a project | Click its name in the list |
 | Resize the list | Drag the separator (the width is remembered) |
 | New line in the prompt | `Shift+Enter`, or `Ctrl+Enter` if chosen in Settings (⚙) |
-| Copy / paste | `Ctrl+C` on a selection / `Ctrl+V` (`⌘C` / `⌘V` on Mac), or right-click: copies the selection, or pastes when nothing is selected |
+| Copy / paste | `Ctrl+C` on a selection / `Ctrl+V` (`⌘C` / `⌘V` on Mac), or right-click: copies the selection, or pastes when nothing is selected (except while Claude Code's fullscreen renderer holds the mouse) |
 | Paste a file path | Drag the file onto a console |
 | Theme, text size, language | Settings (⚙) |
 | Usage limits | Settings (⚙) → "Show the usage limits", then **⟳** under the list; point at a value for its reset time |
