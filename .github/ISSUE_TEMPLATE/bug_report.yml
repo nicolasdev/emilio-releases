@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in Emilio does not work as it should.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Screenshots can show your session titles and conversations: hide anything private before you attach one. Never share a pairing code.
+  - type: input
+    id: emilio-version
+    attributes:
+      label: Emilio version
+      description: Shown at the bottom of Settings (⚙).
+      placeholder: Emilio v3.1.0
+    validations:
+      required: true
+  - type: dropdown
+    id: system
+    attributes:
+      label: System
+      options:
+        - Windows
+        - macOS, Apple Silicon
+        - macOS, Intel
+    validations:
+      required: true
+  - type: input
+    id: claude-version
+    attributes:
+      label: Claude Code version
+      description: The output of `claude --version` in a terminal.
+    validations:
+      required: true
+  - type: dropdown
+    id: used-from
+    attributes:
+      label: Used from
+      options:
+        - The computer that runs Emilio
+        - A phone, through remote access
+        - Another computer, through remote access
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, and what you expected instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Open a session
+        2. …

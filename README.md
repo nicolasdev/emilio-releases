@@ -111,6 +111,13 @@ On the phone, the list and the console each take the whole screen. A bar adds th
 - Unloading a conversation or closing Emilio asks Claude to quit, which takes a few seconds, so that it shuts down cleanly. A session in a git worktree is stopped at once instead: on quitting, Claude Code would delete an unchanged worktree, or wait for an answer about a changed one. Its worktree stays locked until the session is resumed; to remove it by hand, run `git worktree unlock <path>` first.
 - Linux is not supported yet.
 
+## Feedback
+
+- **Found a bug?** [Open an issue](https://github.com/nicolasdev/emilio-releases/issues/new/choose) with your Emilio version and the steps that lead to it.
+- **An idea or a suggestion?** Post it in [Ideas](https://github.com/nicolasdev/emilio-releases/discussions/categories/ideas), where others can vote for it.
+
+Both need a free GitHub account.
+
 ## License
 
 Emilio is freeware: free to use, for personal or commercial purposes. See [LICENSE](LICENSE).
