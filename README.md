@@ -35,7 +35,7 @@ Each letter stands for a feature:
 - **Delete** a conversation, or a worktree with its conversations and, if you choose, its branch.
 - **Usage limits** under the list, read from Claude Code's `/usage` on demand or every 5 minutes: current session, week, and week per model.
 - **Remote access** from your phone or another computer, through Tailscale: the whole Emilio, list and consoles, with a key bar and a text field made for a phone keyboard.
-- **New versions** reported by a red dot on ⚙, from a check on GitHub once a day; nothing is downloaded or installed.
+- **New versions** reported by a red dot on ⚙, from a check on GitHub once a day or when you ask; nothing is downloaded or installed.
 - Dark, light or system **theme**, adjustable **font sizes**, interface in **English, French and Spanish**.
 
 ![The same list in the light theme](images/emilio-light.png)
@@ -81,7 +81,7 @@ The installers are not code-signed yet, so the first launch shows a warning:
 | Give Claude a file | Drag it onto a console, then drop it on **Convert to Markdown** (Word, Excel, PowerPoint, PDF, OpenDocument, RTF, EPUB, HTML: the path of a Markdown copy is pasted) or on **Paste the path** (the file as it is). Settings (⚙) → Dropped files turns the conversion off: the path is then pasted at once |
 | Theme, text size, language | Settings (⚙) |
 | Usage limits | Settings (⚙) → Claude Code → "Show the usage limits", then **⟳** under the list, or **Auto** to read them again every 5 minutes while the window shows; point at a value for its reset time |
-| New version | A red dot on ⚙; at the bottom of Settings, **New version: x.y.z** opens its release page. Settings (⚙) → About → "Check for new versions" turns the check off |
+| New version | A red dot on ⚙; at the bottom of Settings, **New version: x.y.z** opens its release page. Settings (⚙) → About → **Check now** checks at once, and "Check for new versions" turns the daily check off |
 | Use Emilio from your phone | See [Remote access](#remote-access) |
 | Keyboard only | `Tab` to the list, arrows to move, `Enter` to open, `F2` to rename, `Shift+F10`, the Menu key or `Ctrl+Enter` (`⌃↩` on macOS) for the session menu |
 
@@ -107,7 +107,7 @@ On the phone, the list and the console each take the whole screen, and the back 
 
 ## Privacy
 
-- Emilio runs on your machine. Its only request of its own goes to GitHub once a day, to read the number of the latest published version: GitHub receives the version of Emilio and, as with any web request, your IP address; Settings (⚙) → About → "Check for new versions" turns it off. It accepts connections from this computer only: from the `claude` consoles it starts, which reach the system console of their session with a key of their own, and, with remote access on, from your devices, through Tailscale. The `claude` consoles it starts talk to Anthropic exactly as they do in a terminal, and so does the `claude` started for a few seconds when the usage limits are read, by ⟳ or every 5 minutes with Auto.
+- Emilio runs on your machine. Its only request of its own goes to GitHub once a day, and when you click **Check now**, to read the number of the latest published version: GitHub receives the version of Emilio and, as with any web request, your IP address; Settings (⚙) → About → "Check for new versions" turns it off. It accepts connections from this computer only: from the `claude` consoles it starts, which reach the system console of their session with a key of their own, and, with remote access on, from your devices, through Tailscale. The `claude` consoles it starts talk to Anthropic exactly as they do in a terminal, and so does the `claude` started for a few seconds when the usage limits are read, by ⟳ or every 5 minutes with Auto.
 - Claude receives from the system console of its session only what the commands it runs itself print. Your own commands, and what you type between its commands, are never sent to it; what you type to answer one of its commands is part of its output.
 - It reads the session transcripts in your Claude configuration folders. It writes to them only to rename a session, by appending one line, and deletes them only when you delete a conversation or a worktree.
 - A file dropped on **Convert to Markdown** is converted on this computer, without OCR and without downloading anything, into `Emilio-markdown` in the system's temporary folder, 50 MB at most per file. Emilio deletes these copies once they are older than 7 days, when it starts and before each conversion; Settings (⚙) → Dropped files changes the number of days, or deletes them all at once.
