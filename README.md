@@ -36,6 +36,7 @@ Each letter stands for a feature:
 - **Usage limits** under the list, read from Claude Code's `/usage` on demand or every 5 minutes: current session, week, and week per model.
 - **Remote access** from your phone or another computer, through Tailscale: the whole Emilio, list and consoles, with a key bar and a text field made for a phone keyboard.
 - **New versions** reported by a red dot on ⚙, from a check on GitHub once a day or when you ask; nothing is downloaded or installed.
+- **Built-in help**, searchable, under **?** next to ⚙.
 - Dark, light or system **theme**, adjustable **font sizes**, interface in **English, French and Spanish**.
 
 ![The same list in the light theme](images/emilio-light.png)
@@ -83,6 +84,7 @@ The installers are not code-signed yet, so the first launch shows a warning:
 | Usage limits | Settings (⚙) → Claude Code → "Show the usage limits", then **⟳** under the list, or **Auto** to read them again every 5 minutes while the window shows; point at a value for its reset time |
 | New version | A red dot on ⚙; at the bottom of Settings, **New version: x.y.z** opens its release page. Settings (⚙) → About → **Check now** checks at once, and "Check for new versions" turns the daily check off |
 | Use Emilio from your phone | See [Remote access](#remote-access) |
+| Help | **?** next to ⚙: the guide of Emilio, with a search |
 | Keyboard only | `Tab` to the list, arrows to move, `Enter` to open, `F2` to rename, `Shift+F10`, the Menu key or `Ctrl+Enter` (`⌃↩` on macOS) for the session menu |
 
 "folder not found" means the session's original folder no longer exists on this machine. Claude Code only resumes a session from its original folder, so restore or recreate that folder at the same path.
